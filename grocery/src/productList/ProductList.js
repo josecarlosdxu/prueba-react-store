@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductCard from "../card/ProductCard";
+import ProductCard from "../productCard/ProductCard";
 import "./ProductList.css";
 
 
@@ -18,7 +18,8 @@ class ProductList extends Component {
   componentDidMount() {
 
 
-    fetch('/grocery/?_page=1')
+   /* fetch('/grocery/?_page=1')*/
+   fetch('/grocery/?_limit=30')
       .then(res => res.json(), {method: 'get'})
       .then(
         (result) => {
@@ -56,6 +57,7 @@ class ProductList extends Component {
 
     return (
       <section className="product-list">
+      <header className="product-list-header"><h1 className="product-list-name">Product List</h1> </header>
 
        {products.map((e, i) => (
           <ProductCard

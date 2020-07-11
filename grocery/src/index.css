@@ -5,8 +5,10 @@
     --boxshadow: 0 1px 1px rgba(16, 27, 30, 0.03), 0 2px 2px rgba(16, 27, 30, 0.03), 0 4px 4px rgba(16, 27, 30, 0.03), 0 8px 8px rgba(16, 27, 30, 0.03), 0 16px 16px rgba(16, 27, 30, 0.03);
     --font-size: 14px;
     --line-height: 1.2;
-    --scrollbar-base: hsl(32, 75%, 55%);
-    --scrollbar-front:  hsl(32, 84%, 75%);
+    --scrollbar-base: hsl(190, 10%, 70%);
+    --scrollbar-front: hsl(190, 10%, 90%);
+    /*--mobile-view: 840px;*/
+    --mobile-view: 1400px;
 }
 
 /*#F0AA58*/
@@ -15,11 +17,10 @@
     padding: 0;
     scrollbar-width: thin;
     box-sizing: border-box;
-
 }
+
 html {
     scrollbar-color: var(--scrollbar-front) var(--scrollbar-base);
-
 }
 
 html,
@@ -31,7 +32,14 @@ body {
     width: 8px;
 }
 
+body::-webkit-scrollbar-track {
+    background: var(--scrollbar-base);
+}
 
+body::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 0 1px var(--scrollbar-base);
+    background: var(--scrollbar-front);
+}
 
 body {
     font-family: "Roboto", sans-serif;
@@ -45,20 +53,21 @@ body {
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
-
-body::-webkit-scrollbar-track {
-    background: var(--scrollbar-base);
-}
-
-body::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 0 1px var(--scrollbar-base);
-    background: var(--scrollbar-front);
-}
-
-
 
 body * {
     position: relative;
 }
+
+@media (max-width:980px) {
+    :root {
+        --scrollbar-base: hsl(32, 75%, 55%);
+        --scrollbar-front: hsl(32, 84%, 75%);
+    }
+    html {
+        overflow-x:hidden;
+    }
+
+}
+/* 540px  change grid gap
+*/

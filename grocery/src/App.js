@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import ProductList from './list/ProductList';
+import ProductList from './productList/ProductList';
+import ShoppingCart from './shoppingCart/ShoppingCart';
+
+import  './App.css';
 
 
 
@@ -19,6 +22,7 @@ class App extends Component {
         return (
             <section className="App" >
                 <ProductList />
+                <ShoppingCart />
             </section>
         );
     }

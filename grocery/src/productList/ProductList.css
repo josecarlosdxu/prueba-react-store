@@ -1,0 +1,32 @@
+.product-list {
+    background-color: #F5F5F5;
+    display: grid;
+    grid-template-columns: 190px;
+    width: 100%;
+}
+
+.product-list {
+    background-color: #F5F5F5;
+    display: grid;
+    grid-gap: 40px;
+    grid-row-gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+    grid-auto-flow: dense;
+   /* width: 920px;*/
+    padding: 40px;
+}
+
+.product-list-header {
+    grid-column: 1 / -1;
+}
+
+.product-list-name {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.75em;
+    opacity: 0.75;
+    letter-spacing: 0.03em;
+}
+
+
+

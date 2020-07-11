@@ -1,0 +1,29 @@
+.shopping-cart {
+    background-color: white;
+    padding: 40px;
+    width: 100%;
+    min-width: 340px;
+    height: 100%;
+}
+
+/*.shopping-cart-header {
+    grid-column: 1 / -1;
+}*/
+.shopping-cart-name {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.75em;
+    opacity: 0.75;
+    letter-spacing: 0.03em;
+}
+
+@media (max-width:980px) {
+    .shopping-cart {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        pointer-events: none;
+    }
+
+}
