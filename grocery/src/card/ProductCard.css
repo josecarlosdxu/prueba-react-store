@@ -6,7 +6,6 @@
     --hue: 359.6;
     --sat: 73.2%;
     --lum: 100%;
-    --color: hsl(var(--hue), var(--sat), var(--lum));
 }
 
 button {
@@ -15,10 +14,15 @@ button {
     appearance: none;
     border: none;
     cursor: pointer;
+    font-family: inherit;
+}
+
+button:focus {
+    outline: none;
 }
 
 .icon-button {
-    color: var(--color);
+    color: hsl(var(--hue), var(--sat), var(--lum));
     padding: 6px;
     margin: 0;
     line-height: 1;
@@ -47,10 +51,6 @@ button {
     left: 0;
     top: 0;
     mix-blend-mode: hard-light;
-}
-
-.icon-button:focus {
-    outline: none;
 }
 
 .icon-button.has-selected,
@@ -129,4 +129,18 @@ button {
 .product-card-add {
     font-weight: 500;
     font-size: 0.9em;
+}
+
+.product-card-add {
+    font-size: 0.9em;
+    padding: 0.3em 0.75em;
+    background-color: gainsboro;
+    opacity: 0.7;
+    border-radius: 3px;
+    transition: opacity 0.1s;
+}
+
+.product-card-add:hover{
+     opacity: 1;
+
 }

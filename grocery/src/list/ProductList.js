@@ -11,79 +11,66 @@ class ProductList extends Component {
     };
   }
 
-  /*toggleFavourite = () => {
+  toggleFavourite = () => {
     this.setState({ favourite: !this.state.favourite });
   };
 
-  componentDidMount() {}*/
+  componentDidMount() {
+
+
+    fetch('/grocery/?_page=1')
+      .then(res => res.json(), {method: 'get'})
+      .then(
+        (result) => {
+           this.setState({
+            products: result
+          });
+
+        },
+       (error) => {
+          /*this.setState({
+            isLoaded: true,
+            error
+          });*/
+        }
+      )
+  }
+/*<ProductCard
+            productName={e.productName}
+            image_url={e.image_url}
+            key={i}
+            price={e.price}
+            onClick={this.props.showPadName}
+            disabled={disabled}
+            url={e.url}
+            volume={this.props.volume}
+          />
+*/
+
+
+
+
 
   render() {
+    const { products } = this.state;
 
     return (
       <section className="product-list">
-        <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
+
+       {products.map((e, i) => (
           <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
+            productName={e.productName}
+            image_url={e.image_url}
+            key={i}
+            price={e.price}
+            stock={e.stock}
+            productDescription={e.productDescription}
+
           />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
-          <ProductCard
-                    productName="Unbranded Metal Chair"
-                    image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
-                    price="50"
-                    stock="40"
-                    productDescription="Porro tempore autem. Sunt molestias qui quod recusandae nemo quia optio. Nostrum aperiam officiis aut reprehenderit illo."
-          />
+        ))}
+
+
+
 
       </section>
     );
