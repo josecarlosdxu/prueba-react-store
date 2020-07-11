@@ -1,0 +1,132 @@
+.product-card {
+    --card-radius: 7px;
+    --description-font-size: 12px;
+    --lines-to-show: 2;
+    --svg-heart: url("data:image/svg+xml;utf8,<svg xmlns=!string!viewBox=!string!stroke-width=!string!stroke-linecap=!string!stroke-linejoin=!string!><path d=!string!></path></svg>");
+    --hue: 359.6;
+    --sat: 73.2%;
+    --lum: 100%;
+    --color: hsl(var(--hue), var(--sat), var(--lum));
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button {
+    color: var(--color);
+    padding: 6px;
+    margin: 0;
+    line-height: 1;
+    font-size: 0;
+    background: transparent;
+    transition: color 0.1s ease-in;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+}
+
+.icon-button:before {
+    content: 'http://www.w3.org/2000/svg';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: var(--svg-heart);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    opacity: 0.2;
+    filter: blur(2px);
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    mix-blend-mode: hard-light;
+}
+
+.icon-button:focus {
+    outline: none;
+}
+
+.icon-button.has-selected,
+.icon-button:active {
+    --lum: 59%;
+}
+
+.icon-button.has-selected:active {
+    --lum: 100%;
+}
+
+.product-card {
+    border-radius: var(--card-radius);
+    background-color: white;
+    box-shadow: var(--boxshadow);
+    width: 100%;
+}
+
+.product-card-image {
+    display: block;
+    width: 100%;
+    border-top-left-radius: var(--card-radius);
+    border-top-right-radius: var(--card-radius);
+}
+
+.product-card-content {
+    padding: 12px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-card-name {
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    width: calc(100% - 2em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 0.25em;
+}
+
+.product-card-description {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    max-width: 400px;
+    height: calc(var(--description-font-size)*var(--line-height)*var(--lines-to-show)); /* Fallback for non-webkit */
+    margin: 0 auto;
+    font-size: var(--description-font-size);
+    line-height: var(--line-height);
+    -webkit-line-clamp: var(--lines-to-show);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5em;
+}
+
+.product-card-price {
+    color: #5076D7;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.product-card-price data {
+    font-size: 0.8em;
+    line-height: 0;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.product-card-stock {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.product-card-add {
+    font-weight: 500;
+    font-size: 0.9em;
+}
