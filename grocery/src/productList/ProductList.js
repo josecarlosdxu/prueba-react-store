@@ -58,6 +58,8 @@ class ProductList extends Component {
     return (
       <section className="product-list">
       <header className="product-list-header"><h1 className="product-list-name">Product List</h1> </header>
+      <section className="product-list-container">
+      <section className="product-list-content">
 
        {products.map((e, i) => (
           <ProductCard
@@ -73,7 +75,8 @@ class ProductList extends Component {
 
 
 
-
+       </section>
+       </section>
       </section>
     );
   }

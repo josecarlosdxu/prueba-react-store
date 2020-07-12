@@ -1,18 +1,17 @@
 .App {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 340px;
     grid-auto-flow: dense;
 }
 
-@media (max-width:980px) {
+@media (max-width:780px) {
     .App {
         display: block;
-        width: 90vw;
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
-        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+       
     }
 
 }

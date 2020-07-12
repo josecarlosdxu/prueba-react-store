@@ -5,10 +5,10 @@
     --boxshadow: 0 1px 1px rgba(16, 27, 30, 0.03), 0 2px 2px rgba(16, 27, 30, 0.03), 0 4px 4px rgba(16, 27, 30, 0.03), 0 8px 8px rgba(16, 27, 30, 0.03), 0 16px 16px rgba(16, 27, 30, 0.03);
     --font-size: 14px;
     --line-height: 1.2;
-    --scrollbar-base: hsl(190, 10%, 70%);
-    --scrollbar-front: hsl(190, 10%, 90%);
-    /*--mobile-view: 840px;*/
+    --scrollbar-base: hsl(0, 0%, 93%);
+    --scrollbar-front: hsl(0, 0%, 100%);    /*--mobile-view: 840px;*/
     --mobile-view: 1400px;
+    --list-gap: 40px;
 }
 
 /*#F0AA58*/
@@ -17,26 +17,29 @@
     padding: 0;
     scrollbar-width: thin;
     box-sizing: border-box;
+
 }
 
 html {
-    scrollbar-color: var(--scrollbar-front) var(--scrollbar-base);
+    scrollbar-color: var(--scrollbar-front) var(--scrollbar-base);    
 }
 
 html,
 body {
-    overflow: auto;
+    overflow: hidden;
+    height: 100%;
+
 }
 
 ::-webkit-scrollbar {
     width: 8px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: var(--scrollbar-base);
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 0 1px var(--scrollbar-base);
     background: var(--scrollbar-front);
 }
@@ -57,17 +60,17 @@ body {
 
 body * {
     position: relative;
+
+}
+main {
+    height: 100%;
+
 }
 
-@media (max-width:980px) {
+
+@media (max-width:1040px) {
     :root {
-        --scrollbar-base: hsl(32, 75%, 55%);
-        --scrollbar-front: hsl(32, 84%, 75%);
-    }
-    html {
-        overflow-x:hidden;
+        --list-gap: 26px;
     }
 
 }
-/* 540px  change grid gap
-*/

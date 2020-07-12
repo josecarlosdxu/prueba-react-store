@@ -105,7 +105,7 @@ button:focus {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 }
 
 .product-card-price {

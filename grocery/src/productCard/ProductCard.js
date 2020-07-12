@@ -24,7 +24,7 @@ class ProductCard extends Component {
         const { favourite, stock } = this.state;
         return (
             <article className="product-card">
-               <button className={favourite ? "icon-button has-selected" : "icon-button"}onClick={this.toggleFavourite}>
+               <button title="add to favourites" className={favourite ? "icon-button has-selected" : "icon-button"}onClick={this.toggleFavourite}>
                   <IconHeart />
               </button>
           <img src={image_url} alt={productName}  className="product-card-image"/>
