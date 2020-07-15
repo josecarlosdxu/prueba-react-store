@@ -8,23 +8,23 @@ class ProductCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            favourite: false,
+            favorite: Boolean(props.favorite),
             stock: props.stock
         };
     }
 
-    toggleFavourite = () => {
-        this.setState({ favourite: !this.state.favourite });
+    toggleFavorite = () => {
+        this.setState({ favorite: !this.state.favorite });
     };
 
     componentDidMount() {}
 
     render() {
         const { productName, image_url, price, productDescription } = this.props;
-        const { favourite, stock } = this.state;
+        const { favorite, stock } = this.state;
         return (
             <article className="product-card">
-               <button title="add to favourites" className={favourite ? "icon-button has-selected" : "icon-button"}onClick={this.toggleFavourite}>
+               <button title="add to favourites" className={favorite ? "icon-button has-selected" : "icon-button"}onClick={this.toggleFavorite}>
                   <IconHeart />
               </button>
           <img src={image_url} alt={productName}  className="product-card-image"/>

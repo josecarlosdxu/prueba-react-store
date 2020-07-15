@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CartItem from "../cartItem/CartItem";
 
 import "./ShoppingCart.css";
 
@@ -23,11 +24,19 @@ class ShoppingCart extends Component {
       <aside className="shopping-cart ">
       <header className="shopping-cart-header"><h1 className="shopping-cart-name">Cart</h1></header>
       <section className="shopping-cart-container">
-      <section className="shopping-cart-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laboriosam iste, quae qui, dignissimos itaque, nulla sunt perferendis dolore sed tempore reprehenderit maxime expedita facilis quas. Voluptates officiis laudantium hic! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laboriosam iste, quae qui, dignissimos itaque, nulla sunt perferendis dolore sed tempore reprehenderit maxime expedita facilis quas. Voluptates officiis laudantium hic! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laboriosam iste, quae qui, dignissimos itaque, nulla sunt perferendis dolore sed tempore reprehenderit maxime expedita facilis quas. Voluptates officiis laudantium hic! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laboriosam iste, quae qui, dignissimos itaque, nulla sunt perferendis dolore sed tempore reprehenderit maxime expedita facilis quas. Voluptates officiis laudantium hic! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laboriosam iste, quae qui, dignissimos itaque, nulla sunt perferendis dolore sed tempore reprehenderit maxime expedita facilis quas. Voluptates officiis laudantium hic!
-        </section>
-         </section>
-      <footer className="shopping-cart-resume"><button>swerwerw</button></footer>
+        <div className="shopping-cart-content">
+          <CartItem 
+          image_url="https://dummyimage.com/400x400/28200e/000&text=Unbranded Metal Chair"
+          productName="Unbranded Metal Chair"
+          price="43"
+
+          />
+          
+        </div>
+      </section>
+      <footer className="shopping-cart-resume">
+        <button className="shopping-cart-button-shop">Make a payment</button>
+      </footer>
       </aside>
     );
   }
